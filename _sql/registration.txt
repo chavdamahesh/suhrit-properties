@@ -1,0 +1,27 @@
+ALTER TABLE `properties` CHANGE `property_name` `property_name` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL;
+
+ALTER TABLE `properties` CHANGE `short_desc` `short_desc` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL;
+ALTER TABLE `properties` CHANGE `location` `location` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL;
+
+ALTER TABLE `properties` CHANGE `price` `price` INT(11) NULL;
+
+ALTER TABLE `properties` CHANGE `floor` `floor` INT(11) NULL;
+ALTER TABLE `properties` CHANGE `total_area_int` `total_area_int` INT(11) NULL;
+ALTER TABLE `properties` CHANGE `total_area_ext` `total_area_ext` INT(11) NULL;
+ALTER TABLE `properties` CHANGE `year_built` `year_built` INT(11) NULL;
+ALTER TABLE `properties` CHANGE `garage_no` `garage_no` INT(11) NULL;
+ALTER TABLE `properties` CHANGE `no_bath` `no_bath` INT(11) NULL;
+
+ALTER TABLE `properties` CHANGE `no_bedrooms` `no_bedrooms` INT(11) NULL;
+ALTER TABLE `properties` CHANGE `orientation` `orientation` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL;
+ALTER TABLE `properties` CHANGE `garage` `garage` TINYINT(4) NOT NULL DEFAULT '0';
+ALTER TABLE `properties` CHANGE `garden` `garden` TINYINT(4) NOT NULL DEFAULT '0';
+ALTER TABLE `properties` CHANGE `parking` `parking` TINYINT(4) NOT NULL DEFAULT '0';
+ALTER TABLE `properties` CHANGE `terrase` `terrase` TINYINT(4) NOT NULL DEFAULT '0';
+
+ALTER TABLE `properties` CHANGE `year_reno` `year_reno` INT(11) NULL;
+ALTER TABLE `properties` CHANGE `no_outdoor_parking_spots` `no_outdoor_parking_spots` INT(11) NULL;
+ALTER TABLE `properties` CHANGE `kitchen_type` `kitchen_type` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL;
+ALTER TABLE `properties` CHANGE `key_feature_1` `key_feature_1` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL;
+ALTER TABLE `properties` CHANGE `key_feature_2` `key_feature_2` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL;
+ALTER TABLE `properties` CHANGE `key_feature_3` `key_feature_3` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL;

@@ -1,0 +1,2 @@
+INSERT INTO `media` (id, fid, model_type, model_id, collection_name, name, file_name, order_column) select null, 0, 'App\\Http\\Models\\Property' as model_type, id_properties as model_id, 'properties' as collection_name, REPLACE(image, 'avatars/', '') as name, REPLACE(image, 'avatars/', '') as file_name, sort_order as order_column FROM images
+ALTER TABLE `media` ADD `alt_text` VARCHAR(255) NULL AFTER `file_name`;
