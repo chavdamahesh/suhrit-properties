@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[21],{"/8yj":function(t,n,e){"use strict";e.r(n);var a={name:"EditForm",components:{ContentDetail:e("yICR").a}},i=e("KHd+"),o=Object(i.a)(a,(function(){var t=this.$createElement;return(this._self._c||t)("content-detail",{attrs:{"is-edit":!0}})}),[],!1,null,null,null);n.default=o.exports}}]);

@@ -12,8 +12,10 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        'https://dev.atladra-properties.com/admin/*',
-        'https://dev.atladra-properties.com/*',
+        'https://suhrit-properties.com/admin/*',
+        'https://suhrit-properties.com/*',
+        'http://suhrit-properties.test/admin/*',
+        'http://suhrit-properties.test/*',
         '*/sanctum/csrf-cookie',
         '*/api/property/upload'
     ];

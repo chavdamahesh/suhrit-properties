@@ -203,17 +203,17 @@ class PropertyController extends BaseController
 
         if(!empty($property->translations->toArray())){
             // print_r($property->translations->toArray()); exit;
-            $property->name_eng = $property->translations[0]['property_name'];
-            $property->shortdesceng = $property->translations[0]['short_desc'];
-            $property->keyfeature1eng = $property->translations[0]['key_feature_1'];
-            $property->keyfeature2eng = $property->translations[0]['key_feature_2'];
-            $property->keyfeature3eng = $property->translations[0]['key_feature_3'];
+            $property->name_eng = isset($property->translations[0]['property_name']) ? $property->translations[0]['property_name'] : '' ;
+            $property->shortdesceng = isset($property->translations[0]['short_desc']) ? $property->translations[0]['short_desc'] : '' ;
+            $property->keyfeature1eng = isset($property->translations[0]['key_feature_1']) ? $property->translations[0]['key_feature_1'] : '' ;
+            $property->keyfeature2eng = isset($property->translations[0]['key_feature_2']) ? $property->translations[0]['key_feature_2'] : '' ;
+            $property->keyfeature3eng = isset($property->translations[0]['key_feature_3']) ? $property->translations[0]['key_feature_3'] : '' ;
 
-            $property->name_fre = $property->translations[1]['property_name'];
-            $property->shortdescfre = $property->translations[1]['short_desc'];
-            $property->keyfeature1fre = $property->translations[1]['key_feature_1'];
-            $property->keyfeature2fre = $property->translations[1]['key_feature_2'];
-            $property->keyfeature3fre = $property->translations[1]['key_feature_3'];
+            $property->name_fre = isset($property->translations[1]['property_name']) ? $property->translations[1]['property_name'] : '' ;
+            $property->shortdescfre = isset($property->translations[1]['short_desc']) ? $property->translations[1]['short_desc'] : '' ;
+            $property->keyfeature1fre = isset($property->translations[1]['key_feature_1']) ? $property->translations[1]['key_feature_1'] : '' ;
+            $property->keyfeature2fre = isset($property->translations[1]['key_feature_2']) ? $property->translations[1]['key_feature_2'] : '' ;
+            $property->keyfeature3fre = isset($property->translations[1]['key_feature_3']) ? $property->translations[1]['key_feature_3'] : '' ;
         }
 
         $property->media = $property

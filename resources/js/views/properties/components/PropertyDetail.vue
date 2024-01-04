@@ -108,8 +108,8 @@
                 </el-form-item>
               </el-col>
               <el-col :span="6">
-                <el-form-item style="margin-bottom: 20px; padding:7px" prop="bedrooms" label="No. Beadrooms">
-                  <el-input v-model="postForm.bedrooms" :maxlength="100" name="bedrooms" required />
+                <el-form-item style="margin-bottom: 20px; padding:7px" prop="no_bedrooms" label="No. Beadrooms">
+                  <el-input v-model="postForm.no_bedrooms" :maxlength="100" name="no_bedrooms" required />
                 </el-form-item>
               </el-col>
             </el-row>
@@ -162,8 +162,8 @@
                 </el-form-item>
               </el-col>
               <el-col :span="6">
-                <el-form-item style="margin-bottom: 20px; padding:7px" prop="garage_area" label="No. of Outdoor parking spots">
-                  <el-input v-model="postForm.garage_area" :maxlength="100" name="garage_area" required />
+                <el-form-item style="margin-bottom: 20px; padding:7px" prop="no_outdoor_parking_spots" label="No. of Outdoor parking spots">
+                  <el-input v-model="postForm.no_outdoor_parking_spots" :maxlength="100" name="no_outdoor_parking_spots" required />
                 </el-form-item>
               </el-col>
               <el-col :span="6">
@@ -282,9 +282,9 @@ const defaultForm = {
   year_built: '',
   garage_no: '',
   no_bath: '',
-  bedrooms: '',
+  no_bedrooms: '',
   year_reno: '',
-  garage_area: '',
+  no_outdoor_parking_spots: '',
   kitchen_type: '',
   orientation: '',
   garden_terrace_orientation: '',
@@ -467,6 +467,7 @@ export default {
       fetchProperty(id)
         .then(response => {
           this.postForm = response.data[0];
+          console.log(this.postForm);
           this.postForm.id;
 
           this.mapCenter = {

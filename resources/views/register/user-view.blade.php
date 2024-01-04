@@ -19,7 +19,7 @@
         <div class="text-item h2 center">
            <?php echo $translations['personal-details-title'];?> 
         </div>
-        <form method="POST" action="{{route('register.user')}}" enctype="multipart/form-data">
+            <form method="POST" action="{{route('register.user')}}" enctype="multipart/form-data">
             @csrf
         <div class="row">
             <div class="form-group col-md-6">

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', 'dev.atladra-properties.com,localhost,127.0.0.1')),
+    'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', 'suhrit-properties.com,dev.atladra-properties.com,localhost,127.0.0.1')),
 
     /*
     |--------------------------------------------------------------------------

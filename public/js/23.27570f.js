@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[23],{"5fL1":function(e,t,n){"use strict";n.r(t);var r={name:"CreateForm",components:{PropertyDetail:n("v/0D").a}},a=n("KHd+"),o=Object(a.a)(r,(function(){var e=this.$createElement;return(this._self._c||e)("property-detail",{attrs:{"is-edit":!1}})}),[],!1,null,null,null);t.default=o.exports}}]);

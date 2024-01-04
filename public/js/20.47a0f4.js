@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[20],{aBo3:function(t,e,n){"use strict";n.r(e);var a={name:"CreateForm",components:{ContentDetail:n("yICR").a}},o=n("KHd+"),s=Object(o.a)(a,(function(){var t=this.$createElement;return(this._self._c||t)("content-detail",{attrs:{"is-edit":!1}})}),[],!1,null,null,null);e.default=s.exports}}]);
