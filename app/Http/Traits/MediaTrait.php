@@ -12,6 +12,7 @@ trait MediaTrait {
 
     public function saveImages($property){
         foreach(request()->get('images') as $fileInfo){
+            // print_r($fileInfo['path']);
             if(empty($fileInfo)) continue;
             if(!isset($fileInfo['id']) || !$fileInfo['id'] || strpos($fileInfo['id'], '000-') > -1){
                 $image = $fileInfo['name'];

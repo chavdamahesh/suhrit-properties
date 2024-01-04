@@ -117,9 +117,9 @@ class PropertyController extends BaseController
             $property->year_built = $params['year_built'];
             $property->garage_no = $params['garage_no'];
             $property->no_bath = $params['no_bath'];
-            $property->no_bedrooms = $params['bedrooms'];
+            $property->no_bedrooms = $params['no_bedrooms'];
             $property->year_reno = $params['year_reno'];
-            $property->garage_area = $params['garage_area'];
+            $property->no_outdoor_parking_spots = $params['no_outdoor_parking_spots'];
             $property->kitchen_type = $params['kitchen_type'];
             $property->orientation = $params['orientation'];
             $property->lift = $params['lift'];
@@ -158,7 +158,7 @@ class PropertyController extends BaseController
             return response(['success' => true, 'message' => 'Your property has been saved.', 'data' => new PropertyResource($property)], 200);
         }
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -270,9 +270,9 @@ class PropertyController extends BaseController
             $property->year_built = $request->get('year_built');
             $property->garage_no = $request->get('garage_no');
             $property->no_bath = $request->get('no_bath');
-            $property->no_bedrooms = $request->get('bedrooms');
+            $property->no_bedrooms = $request->get('no_bedrooms');
             $property->year_reno = $request->get('year_reno');
-            $property->garage_area = $request->get('garage_area');
+            $property->no_outdoor_parking_spots = $request->get('no_outdoor_parking_spots');
             $property->kitchen_type = $request->get('kitchen_type');
             $property->orientation = $request->get('orientation');
             $property->lift = $request->get('lift');

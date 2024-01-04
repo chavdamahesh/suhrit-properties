@@ -96,27 +96,15 @@ class UserController extends Controller
             'no_outdoor_parking_spots'  => 'required',
             'kitchen_type' => 'required',
             // 'image_upload' => 'required',
-            'image_upload.*' => 'mimes:png,jpg,jpeg|max:1048',
+            // 'image_upload.*' => 'mimes:png,jpg,jpeg|max:1048',
         ]);
 
         if ($validator->fails()) {
             // echo '<pre>';print_r($validator->errors()->get('image_upload.*'));exit();
             return redirect()->back()->withErrors($validator->errors());
         }
-
-       
-        if($request->hasfile('image_upload')){
-
-            foreach ($request->file('image_upload') as $file) {
-                $file->getClientOriginalName();
-                $destinationPath = 'uploads';
-                $file->move($destinationPath,$file->getClientOriginalName());
-                $imgdata[] = $file->getClientOriginalName();
-            }
-        }
-    
-
-        $request->image_upload = json_encode($imgdata);
+        
+        // $request->image_upload = json_encode($imgdata);
         $session = new Session();
         $propertyData = [
             'first_name' => $session->get('personal_details')['first_name'],
@@ -143,7 +131,7 @@ class UserController extends Controller
             'total_area_int'=> $request->total_area_int,
             'total_area_ext'=> $request->total_area_ext,
             'year_built' => $request->year_built,
-            'image_upload' => $request->image_upload ,
+            'image_upload' => '',
             'garage_no'=> $request->garage_no,
             'no_bath' => $request->no_bath,
             'no_bedrooms' => $request->no_bedrooms,
@@ -159,6 +147,24 @@ class UserController extends Controller
         $property = new Property();
         $property->create($propertyData);
         $propertyDetails = Property::latest()->first();
+
+        if($request->hasfile('image_upload')){
+            foreach ($request->file('image_upload') as $file) {
+                $file->getClientOriginalName();
+                $destinationPath = storage_path() . '/app/public/temp/' ;
+                $file->move($destinationPath,$file->getClientOriginalName());
+                $image = $file->getClientOriginalName();
+                $tempPath = storage_path() . '/app/public/temp/' . $file->getClientOriginalName();
+                $file_data = file_get_contents($tempPath);
+                Storage::put('public/temp/' . $image, $file_data);
+                $media = $propertyDetails
+                ->addMedia($tempPath)
+                ->preservingOriginal()
+                ->toMediaCollection('properties');
+                $media->save();
+            }
+        }
+
         Mail::to($propertyDetails->email)->send(new sendEmail($propertyDetails));
 
         return back()->with('success','Registered Successfully!');
