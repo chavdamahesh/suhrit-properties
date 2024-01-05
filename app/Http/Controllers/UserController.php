@@ -100,8 +100,7 @@ class UserController extends Controller
         ]);
 
         if ($validator->fails()) {
-            // echo '<pre>';print_r($validator->errors()->get('image_upload.*'));exit();
-            return redirect()->back()->withErrors($validator->errors());
+            return redirect('property-details')->withErrors($validator)->withInput();
         }
         
         // $request->image_upload = json_encode($imgdata);

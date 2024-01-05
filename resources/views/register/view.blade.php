@@ -18,16 +18,7 @@
 </div><br/>
     <div class="container">
         <form method="POST" action="/property-details-store" enctype="multipart/form-data"> 
-             @if (count($errors) > 0)
-                 <div class = "alert alert-danger">
-                    <ul>
-                       @foreach ($errors->all() as $error)
-                          <li>{{ $error }}</li>
-                       @endforeach
-                    </ul>
-                 </div>
-             @endif
-
+             
           {{--   @csrf --}}
        {{--    <input type="hidden" value="{{$data->id}}" name="id"> --}}{{-- store inserted in value  --}}
             <div class="form-row">
@@ -229,26 +220,26 @@
                 <div class="col-md-12">
                     <label>Options</label>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" name="lift" value="1" >
+                      <input class="form-check-input" type="checkbox" name="lift" value="1" @if(old('lift')) checked @endif>
                    {{--    <input type="hidden" value="0" name="lift" > --}}
                       <label class="form-check-label">Lift</label>
                         &nbsp;&nbsp;&nbsp;
-                      <input class="form-check-input" type="checkbox" name="security_door" value="1">
+                      <input class="form-check-input" type="checkbox" name="security_door" value="1"  @if(old('security_door')) checked @endif>
                       <label class="form-check-label">Security Door</label>
                          &nbsp;&nbsp;&nbsp;
-                      <input class="form-check-input" type="checkbox" name="double_glazing" value="1">
+                      <input class="form-check-input" type="checkbox" name="double_glazing" value="1"  @if(old('double_glazing')) checked @endif>
                       <label class="form-check-label">Double Glazing</label>
                          &nbsp;&nbsp;&nbsp;
-                      <input class="form-check-input" type="checkbox" name="garage" value="1">
+                      <input class="form-check-input" type="checkbox" name="garage" value="1"  @if(old('garage')) checked @endif>
                       <label class="form-check-label">Garage</label>
                          &nbsp;&nbsp;&nbsp;
-                      <input class="form-check-input" type="checkbox" name="garden" value="1">
+                      <input class="form-check-input" type="checkbox" name="garden" value="1"  @if(old('garden')) checked @endif>
                       <label class="form-check-label">Garden</label>
                          &nbsp;&nbsp;&nbsp;
-                      <input class="form-check-input" type="checkbox" name="parking" value="1">
+                      <input class="form-check-input" type="checkbox" name="parking" value="1"  @if(old('parking')) checked @endif>
                       <label class="form-check-label">Parking</label>
                          &nbsp;&nbsp;&nbsp;
-                      <input class="form-check-input" type="checkbox" name="terrase" value="1">
+                      <input class="form-check-input" type="checkbox" name="terrase" value="1"  @if(old('terrase')) checked @endif>
                       <label class="form-check-label">Terrase</label>
                     </div>
                 </div>

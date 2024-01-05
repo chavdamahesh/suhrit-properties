@@ -9,6 +9,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Mail\QRCodeEmail;
 use Illuminate\Http\Request;
 use App\Laravue\JsonResponse;
 use Illuminate\Http\Resources\Json\ResourceCollection;
@@ -20,9 +21,12 @@ use App\Http\Resources\PropertyResource;
 use App\Http\Resources\PropertyEditResource;
 use App\Http\Resources\PropertyCollection;
 use App\Http\Traits\MediaTrait;
+use Illuminate\Support\Facades\Mail;
 
 use Validator;
 use DB;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * Class PropertyController
@@ -334,9 +338,25 @@ class PropertyController extends BaseController
         $property->sold = $request->get('sold');
         $property->save();
 
+        if ($property->active && isset($property->email) && $property->email != '') {
+
+            $this->generateQrCode($property);
+        }
+
         return response()->json(['success' => true, 'message' => 'Retrieved successfully', 'data' => new PropertyResource($property)], 200);
     }
 
+    public function generateQrCode($property)
+    {
+        // Generate the QR code for your URL
+        // http://suhrit-properties.test/property/6
+        $url = 'http://suhrit-properties.test/property/' . $property->id;
+        $qrCode = QrCode::size(200)->generate($url);
+
+        Mail::to($property->email)->send(new QRCodeEmail($qrCode,$property));
+
+
+    }
 
     /**
      * Remove the specified resource from storage.

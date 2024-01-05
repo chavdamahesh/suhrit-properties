@@ -12,7 +12,7 @@
     <el-table v-loading="listLoading" :data="list" border fit highlight-current-row style="width: 100%">
       <el-table-column align="center" label="" width="80">
         <template slot-scope="{row}">
-          <img v-if="row.images[0] && row.images[0].thumb_image !== ''" :src="'http://hsm2.oroojo.com/storage/properties/'+row.images[0].thumb_image" style="width:100%; height:100%; object-fit:cover">
+          <img v-if="row.images[0] && row.images[0].thumb_image !== ''" :src="'https://suhrit-properties.com/storage/properties/'+row.images[0].thumb_image" style="width:100%; height:100%; object-fit:cover">
         </template>
       </el-table-column>
 
