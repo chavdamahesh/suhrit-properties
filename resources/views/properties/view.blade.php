@@ -14,7 +14,8 @@
 	<div class="clear"></div>
 
 	<div class="project-slider">
-		<div class="project-type">For Contract: <?php echo __('For').' '.$property->contract; ?>: @money($property->price, 'INR', true)</div>
+		<?php $price = floatval($property->price); ?>
+		<div class="project-type">For Contract: <?php echo __('For').' '.$property->contract; ?>: @money($price, 'INR', true)</div>
 		<div class="col-12 col-md-6">
 			<div class="royalSlider rsUni">
 				<?php foreach($property->media as $img): ?>
@@ -53,10 +54,10 @@
 
 							<ul>
 								<?php if($property->total_area_int != ""){?>
-									<?php echo $property->total_area_int != "0" ? '<li><div class="p-header">'. $translations['AREA INTERIOR'].'</div><div class="detail number"> '.$property->total_area_int.' <sup>m2</sup></div></li> '  : ''?>
+									<?php echo $property->total_area_int != "0" ? '<li><div class="p-header">'. $translations['AREA INTERIOR'].'</div><div class="detail number"> '.$property->total_area_int.' <sup>sqft</sup></div></li> '  : ''?>
 								<?php }?>
 								<?php if($property->total_area_ext != ""){?>
-								  <?php echo $property->total_area_ext != "0" ? '<li><div class="p-header">'. $translations['AREA EXTERIOR'].'</div><div class="detail number"> '.$property->total_area_ext.' <sup>m2</sup></div></li> '  : '' ?>
+								  <?php echo $property->total_area_ext != "0" ? '<li><div class="p-header">'. $translations['AREA EXTERIOR'].'</div><div class="detail number"> '.$property->total_area_ext.' <sup>sqft</sup></div></li> '  : '' ?>
 								<?php }?>
 								<?php if($property->floor != ""){?>
 								  <?php echo $property->floor != "0" ? '<li><div class="p-header">'. $translations['FLOOR'].'</div><div class="detail number"> '.$property->floor.'</div></li> '  : '' ?>

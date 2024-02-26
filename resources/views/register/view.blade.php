@@ -47,6 +47,7 @@
                               <label>{{ $translations['type'] }}</label>
                                <?php
                                    $locTypes = array(
+                                       'Ploat' => __('Ploat'),
                                        'House' => __('House'),
                                        'Apartment' => __('Apartment'),
                                        'Commercial' => __('Commercial'),

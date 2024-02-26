@@ -20,6 +20,7 @@ export function createProperty(data) {
     url: '/property/create',
     method: 'post',
     data,
+    timeout: 60000,
   });
 }
 
@@ -28,6 +29,7 @@ export function updateProperty(id, data) {
     url: '/property/' + id + '/update',
     method: 'post',
     data,
+    timeout: 60000,
   });
 }
 
@@ -36,6 +38,7 @@ export function updatePropertyStatus(id, data) {
     url: '/property/' + id + '/update-status',
     method: 'post',
     data,
+    timeout: 60000,
   });
 }
 

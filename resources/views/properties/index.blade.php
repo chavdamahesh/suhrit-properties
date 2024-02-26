@@ -35,6 +35,7 @@
                                //'All' => __('All'),
                                'House' => __('House'),
                                'Apartment' => __('Apartment'),
+                               'Plot' => __('Plot'),
                                'Commercial' => __('Commercial'),
                            );
                        ?>

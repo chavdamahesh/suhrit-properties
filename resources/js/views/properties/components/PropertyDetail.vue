@@ -33,6 +33,7 @@
           <el-col :span="6">
             <el-form-item label="Type">
               <el-select v-model="postForm.type" placeholder="Type" name="type">
+                <el-option label="Plot" value="Plot" />
                 <el-option label="House" value="House" />
                 <el-option label="Apartment" value="Apartment" />
                 <el-option label="Commercial" value="Commercial" />

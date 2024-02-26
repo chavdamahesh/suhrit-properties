@@ -21,7 +21,8 @@
                             <img src="<?php echo $pImage ?>" class="img-responsive" alt=""/>
                             
                         <div class="caption">
-                            <strong>@money($feature->price, 'INR', true)</strong>
+                            <?php $price = floatval($feature->price); ?>
+                            <strong>@money($price, 'INR', true)</strong>
                             <ul class="list-inline">
                              <li>
                                 <?php echo $feature
