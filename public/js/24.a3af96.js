@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[24],{"0Nob":function(t,e,n){"use strict";n.r(e);var i={name:"EditForm",components:{}},s=n("KHd+"),o=Object(s.a)(i,(function(){var t=this.$createElement;return(this._self._c||t)("enquiry-detail",{attrs:{"is-edit":!0}})}),[],!1,null,null,null);e.default=o.exports}}]);

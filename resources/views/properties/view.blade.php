@@ -30,7 +30,7 @@
 								<i class="fa fa-map-marker"></i>
 							</span>
 							<div class="media-body">
-								<h3><?php echo isset($property->location->id) ? $property->location->name : '' ?></h3>
+								<h3><?php echo isset($property->address) ? $property->address : '' ?></h3>
 							</div>
 						</div>
 					</div>

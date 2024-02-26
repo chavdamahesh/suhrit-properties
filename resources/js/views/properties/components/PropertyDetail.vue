@@ -225,7 +225,12 @@
           </el-col>
         </el-row>
         <el-row>
-          <el-col :span="24">
+          <el-col :span="12">
+            <el-form-item label="Address" style="margin-bottom: 20px; padding:7px">
+              <el-input v-model="postForm.address" name="address" type="textarea" />
+            </el-form-item>
+          </el-col>
+          <el-col :span="12">
             <el-form-item prop="image_uri" style="margin-bottom: 30px;">
               <media-library v-model="postForm.property" :file-list="postForm.images" :upload-url="'/api/property/upload'" :model="'Property'" :model-id="postForm.id" @input="setFileList" />
             </el-form-item>
@@ -318,6 +323,7 @@ const defaultForm = {
   keyfeature2fre: '',
   keyfeature3eng: '',
   keyfeature3fre: '',
+  address: '',
 };
 
 Vue.use(VueGoogleMaps, {

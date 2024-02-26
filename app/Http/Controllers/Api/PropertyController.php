@@ -136,6 +136,7 @@ class PropertyController extends BaseController
             $property->garden_terrace_orientation = $params['garden_terrace_orientation'];
             $property->charges = $params['charges'];
             $property->energy_efficiency = $params['energy_efficiency'];
+            $property->address = $params['address'];
             /*$property->key_feature_1 = $params['key_feature_1'];
             $property->key_feature_2 = $params['key_feature_2'];
             $property->key_feature_3 = $params['key_feature_3'];*/
@@ -289,6 +290,7 @@ class PropertyController extends BaseController
             $property->garden_terrace_orientation = $params['garden_terrace_orientation'];
             $property->charges = $params['charges'];
             $property->energy_efficiency = $params['energy_efficiency'];
+            $property->address = $params['address'];
 
             if($request->get('mapCenter')){
                 $property->lat = $request->get('mapCenter')['lat'];

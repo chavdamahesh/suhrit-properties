@@ -274,13 +274,20 @@
             </div>
             <br/>
             <div class="form-row">
-                <div class="col-md-12">
+                <div class="col-md-6">
                       <label>Upload Image</label>
                       <input type="file" class="form-control" name="image_upload[]" multiple>
                     @if ($errors->has('image_upload.0'))
                         <span class="text-danger">{{ $errors->first('image_upload.0') }}</span>
                     @endif
 
+                </div>
+                <div class="col-md-6">
+                    <label>Address</label>
+                    <input type="text" class="form-control" name="address" value="{{old('address')}}">
+                    @if ($errors->has('address'))
+                        <span class="text-danger">{{ $errors->first('address') }}</span>
+                    @endif
                 </div>
             </div>
             <div class="form-row">
